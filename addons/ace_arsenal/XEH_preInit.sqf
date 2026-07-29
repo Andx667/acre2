@@ -11,10 +11,8 @@ ADDON = true;
 private _antenna = ["acre_sys_gsa"] call FUNC(getAllItems); //GSA Items
 private _radioWithID = call FUNC(getAllRadios); //Radios incl. unique IDs
 
-private _combined = _antenna + _radioWithID;
-
 GVAR(arsenalButton) = [
-    _combined,
-    "ACRE", //Open Question: localize?
+     _antenna + _radioWithID,
+    "ACRE Items", //Open Question: localize?
     "a3\modules_f_curator\data\portraitradio_ca.paa"
 ] call ace_arsenal_fnc_addRightPanelButton;
