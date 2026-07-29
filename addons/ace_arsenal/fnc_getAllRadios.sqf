@@ -11,7 +11,7 @@
  * All radio classes <ARRAY>
  *
  * Example:
- * [] call  acre_sys_gui_fnc_getAllRadios
+ * [] call  acre_ace_arsenal_fnc_getAllRadios
  *
  * Public: No
  */

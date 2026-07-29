@@ -10,7 +10,7 @@
  * Array of Items
  *
  * Example:
- * ["acre_sys_prc177f"] call acre_sys_gui_fnc_getAllItems
+ * ["acre_sys_prc177f"] call acre_ace_arsenal_fnc_getAllItems
  *
  * Public: No
  */
