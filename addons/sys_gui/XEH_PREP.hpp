@@ -15,3 +15,7 @@ PREP(openRadio);
 PREP(antennaElevationDisplay);
 PREP(showVehicleInfo);
 PREP(updateVehicleInfo);
+
+//Arsenal
+PREP(getAllItems);
+PREP(getAllRadios);
