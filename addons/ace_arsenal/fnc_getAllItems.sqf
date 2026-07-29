@@ -22,6 +22,7 @@ private _items = uiNamespace getVariable QGVAR(allItems);
 
 if (isNil "_items") then {
     _items = getArray(configFile >> "CfgPatches" >> _addonName >> "weapons");
+    uiNamespace setVariable [QGVAR(allItems), _items];
 };
 
 _items //return
