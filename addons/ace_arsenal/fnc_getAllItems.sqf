@@ -18,11 +18,10 @@
 params ["_addonName"];
 TRACE_1("fnc_getAllItems",_this);
 
-private _result = [];
-private _weaponsArray = getArray(configFile >> "CfgPatches" >> _addonName >> "weapons");
+private _items = uiNamespace getVariable QGVAR(allItems);
 
-{
-    _result pushBack _x;
-} forEach (_weaponsArray);
+if (isNil "_items") then {
+    _items = getArray(configFile >> "CfgPatches" >> _addonName >> "weapons");
+};
 
-_result //return
+_items //return
