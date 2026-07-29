@@ -16,6 +16,8 @@
  * Public: No
  */
 
+TRACE_1("fnc_getAllRadios",_this);
+
 private _radios = uiNamespace getVariable QGVAR(allRadios);
 
 if (isNil "_radios") then {
