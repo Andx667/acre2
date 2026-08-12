@@ -11,12 +11,16 @@ GVAR(connectorsEnabled) = false;
 
 ADDON = true;
 
-//Gather Classnames of Radios and the GSA Items
-private _radios = "(getNumber(_x >> 'acre_isRadio')) == 1" configClasses (configFile >> "CfgWeapons") apply {configName _x};
-private _gsaItems = getArray(configFile >> "CfgPatches" >> "acre_sys_gsa" >> "weapons");
 
-GVAR(arsenalButton) = [
-     _radios + _gsaItems,
-    LLSTRING(radios),
-    "a3\modules_f_curator\data\portraitradio_ca.paa"
-] call ace_arsenal_fnc_addRightPanelButton;
+if ("ace_arsenal" call ace_common_fnc_isModLoaded) then {
+    //Gather Classnames of Radios and the GSA Items
+    private _radios = "(getNumber(_x >> 'acre_isRadio')) == 1" configClasses (configFile >> "CfgWeapons") apply {configName _x};
+    private _gsaItems = getArray(configFile >> "CfgPatches" >> "acre_sys_gsa" >> "weapons");
+
+    //Create Tab in Arsenal
+    GVAR(arsenalButton) = [
+        _radios + _gsaItems,
+        LLSTRING(radios),
+        "a3\modules_f_curator\data\portraitradio_ca.paa"
+    ] call ace_arsenal_fnc_addRightPanelButton;
+};
