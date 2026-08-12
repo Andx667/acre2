@@ -47,7 +47,7 @@ if (!hasInterface) exitWith {};
 [IDD_ace_arsenal] call EFUNC(api,addNotificationDisplay);
 
 //ACE3 Arsenal Right Panel Tab
-if ("ace_arsenal" call ace_common_fnc_isModLoaded) then {
+if ("ace_arsenal" call CBA_fnc_isModLoaded) then {
     //Gather Classnames of Radios and the GSA Items
     private _radios = "(getNumber(_x >> 'acre_isRadio')) == 1" configClasses (configFile >> "CfgWeapons") apply {configName _x};
     private _gsaItems = getArray(configFile >> "CfgPatches" >> "acre_sys_gsa" >> "weapons");
